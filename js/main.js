@@ -133,13 +133,10 @@ function showNextFail() {
     failCount++;
 
     if (/\b[1-6]\b/.test(failCount)) {
-        console.log(failCount);
         gId("imgPart" + (failCount - 1)).setAttribute("data", "true");
     }
 
     if (failCount >= 7) {
-        console.log(failCount);
-        console.log(commandStack[0]);
         eval(commandStack[0]);
         commandStack.shift();
     }
